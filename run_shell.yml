@@ -1,0 +1,10 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Run the specified shell command
+      shell: '{{date}}'
+      register: result
+
+    - name: Display the outcome
+      debug:
+      msg: '{{ result }}'
